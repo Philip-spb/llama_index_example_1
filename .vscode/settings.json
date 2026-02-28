@@ -1,0 +1,23 @@
+{
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintArgs": ["--disable=line-too-long", "--max-line-length=120"],
+  "python.linting.pycodestyleArgs": ["--ignore=E501", "--max-line-length=120"],
+  "python.linting.flake8Args": ["--ignore=E501", "--max-line-length=120"],
+  "python.formatting.provider": "none",
+  "python.analysis.disabled": false,
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.typeCheckingMode": "basic",
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports.ruff": "explicit"
+    }
+  },
+  "ruff.line-length": 120,
+  "[py]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "workbench.tree.indent": 20
+}
