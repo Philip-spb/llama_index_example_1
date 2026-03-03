@@ -54,9 +54,7 @@ def create_vector_database(nodes: List) -> Optional[VectorStoreIndex]:
         embedding_model = create_openai_embedding()
 
         # Create a VectorStoreIndex from the nodes
-        index = VectorStoreIndex(
-            nodes=nodes, embed_model=embedding_model, show_progress=False
-        )
+        index = VectorStoreIndex(nodes=nodes, embed_model=embedding_model, show_progress=False)
 
         logger.info("Vector database created successfully")
         return index
@@ -80,7 +78,7 @@ def verify_embeddings(index: VectorStoreIndex) -> bool:
         missing_embeddings = False
 
         for node_id in node_ids:
-            embedding = vector_store.get(node_id)
+            embedding = vector_store.get(node_id)  # pyright: ignore[reportAttributeAccessIssue]
             if embedding is None:
                 logger.warning(f"Node ID {node_id} has a None embedding.")
                 missing_embeddings = True

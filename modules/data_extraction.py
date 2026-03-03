@@ -69,7 +69,7 @@ def extract_linkedin_profile(
                 }
                 # Remove profile picture URLs from groups to clean the data
                 if data.get("groups"):
-                    for group_dict in data.get("groups"):
+                    for group_dict in data.get("groups"):  # pyright: ignore[reportOptionalIterable]
                         group_dict.pop("profile_pic_url", None)
                 return data
             except ValueError as e:

@@ -1,10 +1,12 @@
 # LinkedIn Icebreaker Bot
 
 Приложение для анализа LinkedIn-профиля и генерации:
+
 - 3 стартовых фактов о человеке
 - ответов на вопросы по профилю в формате чата
 
 В проекте используется RAG-пайплайн на базе LlamaIndex:
+
 1. загрузка профиля (ProxyCurl или mock JSON)
 2. разбиение данных на ноды
 3. построение векторного индекса (OpenAI embeddings)
@@ -40,6 +42,7 @@ OPENAI_API_KEY=your_openai_key
 ```
 
 Опционально:
+
 - `GRADIO_SERVER_PORT` (например, `7860`)
 - `GRADIO_SERVER_NAME` (например, `127.0.0.1`)
 - `GRADIO_SHARE=true` для публичной ссылки Gradio
@@ -53,6 +56,7 @@ uv run python app.py
 ```
 
 Во вкладке `Process LinkedIn Profile`:
+
 - `Use Mock Data = true` -> данные берутся из тестового JSON
 - `Use Mock Data = false` -> нужен `ProxyCurl API Key`
 
@@ -71,6 +75,7 @@ uv run python main.py --url "https://www.linkedin.com/in/username/" --api-key "Y
 ## Конфиг
 
 Основные параметры в `config.py`:
+
 - `LLM_MODEL_ID` (по умолчанию `gpt-4o-mini`)
 - `EMBEDDING_MODEL_ID` (по умолчанию `text-embedding-3-small`)
 - `SIMILARITY_TOP_K`
